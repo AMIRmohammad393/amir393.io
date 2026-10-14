@@ -1,823 +1,546 @@
+
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="google-site-verification" content="8z8Iw0bTY5us8AMthZFTqddSkge9pEMu9TxyuSJL_ac" />
-    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="8z8Iw0bTY5us8AMthZFTqddSkge9pEMu9TxyuSJL_ac">
+
     <title>AmirMohammad Projects | آموزش Python و پروژه‌های پایتون</title>
 
-<meta name="description"
-content="AmirMohammad Projects؛ آموزش Python، پروژه‌های پایتون، ماشین حساب هوشمند، برنامه‌های کاربردی و آموزش VS Code.">
-
-<meta name="keywords"
-content="Python, پایتون, آموزش پایتون, پروژه پایتون, برنامه نویسی پایتون, VS Code, آموزش VS Code, ماشین حساب پایتون">
-
-<meta name="author"
-content="امیرمحمد سلیمانی">
-
-<meta name="robots"
-content="index, follow">
-
-<link rel="canonical"
-href="https://amirmohammad393.github.io/">
-
-<style>
-
-*{
-    box-sizing:border-box;
-}
-
-body{
-    margin:0;
-    min-height:100vh;
-    color:white;
-    font-family:Tahoma, Arial, sans-serif;
-
-    background:#020914 url("background.png")
-    center top/cover fixed no-repeat;
-}
-
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    z-index:-1;
-
-    background:linear-gradient(
-        180deg,
-        rgba(1,8,20,.35),
-        rgba(1,7,17,.88)
-    );
-}
-
-.container{
-    width:92%;
-    max-width:1150px;
-    margin:auto;
-}
-
-
-/* ================= NAVBAR ================= */
-
-.nav{
-    margin-top:25px;
-    padding:15px 20px;
-
-    background:rgba(5,20,40,.85);
-
-    border:1px solid rgba(80,170,255,.25);
-
-    border-radius:18px;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    gap:15px;
-}
-
-.logo{
-    font-size:21px;
-    font-weight:bold;
-}
-
-.logo span{
-    color:#35a7ff;
-}
-
-.navlinks{
-    display:flex;
-    gap:8px;
-    flex-wrap:wrap;
-}
-
-.navlinks button{
-    padding:10px 15px;
-
-    border:none;
-
-    border-radius:10px;
-
-    background:#102c4d;
-
-    color:white;
-
-    cursor:pointer;
-
-    font-family:inherit;
-
-    font-weight:bold;
-}
-
-.navlinks button:hover{
-    background:#087cf0;
-}
-
-.navlinks button.active{
-    background:#087cf0;
-}
-
-
-/* ================= HERO ================= */
-
-.hero{
-    padding:80px 20px 60px;
-}
-
-.hero h1{
-    font-size:55px;
-    margin-bottom:15px;
-}
-
-.hero h1 span{
-    color:#35a7ff;
-}
-
-.hero p{
-    color:#d1d5db;
-    font-size:18px;
-    line-height:2;
-}
-
-
-/* ================= SECTIONS ================= */
-
-.section{
-    padding:20px 0 70px;
-}
-
-.hidden{
-    display:none !important;
-}
-
-
-/* ================= FILTERS ================= */
-
-.filters{
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-
-    margin-bottom:25px;
-}
-
-.filters button{
-    padding:10px 16px;
-
-    border:none;
-
-    border-radius:10px;
-
-    background:#102c4d;
-
-    color:white;
-
-    cursor:pointer;
-}
-
-.filters button.active{
-    background:#087cf0;
-}
-
-
-/* ================= PROJECTS ================= */
-
-.grid{
-    display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(250px,1fr));
-
-    gap:20px;
-}
-
-.card{
-    background:rgba(5,20,40,.88);
-
-    border:1px solid rgba(80,170,255,.2);
-
-    border-radius:18px;
-
-    overflow:hidden;
-
-    box-shadow:
-    0 15px 35px rgba(0,0,0,.25);
-}
-
-.cardimg{
-    height:150px;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    font-size:60px;
-
-    background:rgba(20,80,140,.25);
-}
-
-.cardbody{
-    padding:20px;
-}
-
-.cardbody h2{
-    margin-top:0;
-
-    color:#35a7ff;
-}
-
-.cardbody p{
-    color:#cbd5e1;
-
-    line-height:1.9;
-}
-
-.meta{
-    display:flex;
-
-    justify-content:space-between;
-
-    color:#94a3b8;
-
-    font-size:13px;
-
-    margin:15px 0;
-}
-
-.download{
-    width:100%;
-
-    padding:12px;
-
-    border:none;
-
-    border-radius:10px;
-
-    background:#087cf0;
-
-    color:white;
-
-    cursor:pointer;
-
-    font-weight:bold;
-}
-
-.download:hover{
-    background:#18a5ff;
-}
-
-
-/* ================= INFO BOX ================= */
-
-.info-box{
-
-    max-width:900px;
-
-    margin:50px auto;
-
-    padding:35px;
-
-    background:rgba(10,25,50,.92);
-
-    color:white;
-
-    border-radius:20px;
-
-    line-height:2.4;
-
-    border:1px solid rgba(80,170,255,.2);
-
-    box-shadow:
-    0 15px 40px rgba(0,0,0,.3);
-}
-
-.info-box h1{
-    color:#35a7ff;
-
-    font-size:34px;
-
-    margin-top:0;
-}
-
-.info-box h2{
-    color:#35a7ff;
-
-    margin-top:30px;
-}
-
-.info-box p{
-    color:#e2e8f0;
-}
-
-
-/* ================= LINKS ================= */
-
-.download-link{
-    display:inline-block;
-
-    padding:13px 25px;
-
-    background:#087cf0;
-
-    color:white;
-
-    border-radius:12px;
-
-    text-decoration:none;
-
-    font-weight:bold;
-
-    margin:10px 0 20px;
-}
-
-.download-link:hover{
-    background:#18a5ff;
-}
-
-
-/* ================= FOOTER ================= */
-
-footer{
-    text-align:center;
-
-    padding:30px 0;
-
-    color:#94a3b8;
-
-    border-top:1px solid rgba(80,170,255,.2);
-
-    margin-top:40px;
-}
-
-
-/* ================= MOBILE ================= */
-
-@media(max-width:700px){
-
-    .nav{
-        flex-direction:column;
-    }
-
-    .hero h1{
-        font-size:38px;
-    }
-
-    .navlinks{
-        justify-content:center;
-    }
-
-}
-
-</style>
-
+    <meta name="description" content="AmirMohammad Projects؛ آموزش Python، پروژه‌های پایتون، بازی شهروند، ماشین حساب هوشمند و آموزش VS Code.">
+    <meta name="keywords" content="Python, پایتون, آموزش پایتون, پروژه پایتون, برنامه نویسی پایتون, بازی شهروند, VS Code">
+    <meta name="author" content="امیرمحمد سلیمانی">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://amirmohammad393.github.io/">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            color: white;
+            font-family: Tahoma, Arial, sans-serif;
+            background: #020914 url("background.png") center top / cover fixed no-repeat;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background: linear-gradient(
+                180deg,
+                rgba(1, 8, 20, .35),
+                rgba(1, 7, 17, .88)
+            );
+        }
+
+        .container {
+            width: 92%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        /* نوار بالای سایت */
+        .nav {
+            margin-top: 25px;
+            padding: 15px 20px;
+            background: rgba(5, 20, 40, .85);
+            border: 1px solid rgba(80, 170, 255, .25);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 21px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #35a7ff;
+        }
+
+        .navlinks {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .navlinks button,
+        .filters button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 10px;
+            background: #102c4d;
+            color: white;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: bold;
+        }
+
+        .navlinks button:hover,
+        .filters button:hover {
+            background: #087cf0;
+        }
+
+        .navlinks button.active,
+        .filters button.active {
+            background: #087cf0;
+        }
+
+        /* بخش معرفی */
+        .hero {
+            padding: 80px 20px 60px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #35a7ff;
+        }
+
+        .hero p {
+            color: #d1d5db;
+            font-size: 18px;
+            line-height: 2;
+        }
+
+        /* بخش‌ها */
+        .section {
+            padding: 20px 0 70px;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* فیلتر پروژه‌ها */
+        .filters {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        /* کارت پروژه‌ها */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: rgba(5, 20, 40, .88);
+            border: 1px solid rgba(80, 170, 255, .2);
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, .25);
+        }
+
+        .cardimg {
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            background: rgba(20, 80, 140, .25);
+        }
+
+        .cardbody {
+            padding: 20px;
+        }
+
+        .cardbody h2 {
+            margin-top: 0;
+            color: #35a7ff;
+        }
+
+        .cardbody p {
+            color: #cbd5e1;
+            line-height: 1.9;
+        }
+
+        .meta {
+            display: flex;
+            justify-content: space-between;
+            color: #94a3b8;
+            font-size: 13px;
+            margin: 15px 0;
+        }
+
+        .download {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            background: #087cf0;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            font-family: inherit;
+        }
+
+        .download:hover,
+        .download-link:hover {
+            background: #18a5ff;
+        }
+
+        .download-link {
+            display: inline-block;
+            padding: 13px 25px;
+            background: #087cf0;
+            color: white;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px 0 20px;
+        }
+
+        /* بخش درباره من و آموزش */
+        .info-box {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 35px;
+            background: rgba(10, 25, 50, .92);
+            color: white;
+            border-radius: 20px;
+            line-height: 2.4;
+            border: 1px solid rgba(80, 170, 255, .2);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, .3);
+        }
+
+        .info-box h1,
+        .info-box h2 {
+            color: #35a7ff;
+        }
+
+        .info-box h1 {
+            font-size: 34px;
+            margin-top: 0;
+        }
+
+        .info-box h2 {
+            margin-top: 30px;
+        }
+
+        .info-box p {
+            color: #e2e8f0;
+        }
+
+        /* پایین سایت */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #94a3b8;
+            border-top: 1px solid rgba(80, 170, 255, .2);
+            margin-top: 40px;
+        }
+
+        @media (max-width: 700px) {
+            .nav {
+                flex-direction: column;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .navlinks {
+                justify-content: center;
+            }
+
+            .info-box {
+                padding: 22px;
+            }
+        }
+    </style>
 </head>
 
-
 <body>
-
 <div class="container">
 
-
-<!-- ================= NAVBAR ================= -->
-
-<nav class="nav">
-
-    <div class="logo">
-        💻 AmirMohammad <span>Projects</span>
-    </div>
-
-    <div class="navlinks">
-
-        <button
-        class="active"
-        onclick="showTab('projects',this)">
-            📁 پروژه‌ها
-        </button>
-
-        <button
-        onclick="showTab('about',this)">
-            👤 درباره من
-        </button>
-
-        <button
-        onclick="showTab('vscode',this)">
-            💻 آموزش VS Code
-        </button>
-
-    </div>
-
-</nav>
-
-
-<!-- ================= HERO ================= -->
-
-<section class="hero">
-
-    <h1>
-        AmirMohammad
-        <span>Projects</span>
-    </h1>
-
-    <p>
-        به سایت پروژه‌های امیرمحمد خوش آمدید.
-        در این سایت پروژه‌های Python و برنامه‌های
-        مختلف قرار می‌گیرند.
-    </p>
-
-</section>
-
-
-<!-- ================= PROJECTS ================= -->
-
-<section
-id="projects"
-class="section">
-
-    <div class="filters">
-
-        <button
-        class="active"
-        onclick="filterProjects('all',this)">
-            همه پروژه‌ها
-        </button>
-
-        <button
-        onclick="filterProjects('python',this)">
-            🐍 Python
-        </button>
-
-        <button
-        onclick="filterProjects('ai',this)">
-            🤖 هوش مصنوعی
-        </button>
-
-        <button
-        onclick="filterProjects('game',this)">
-            🎮 بازی
-        </button>
-
-    </div>
-
-
-    <div class="grid">
-
-
-        <!-- ماشین حساب -->
-
-        <div
-        class="card"
-        data-category="python ai">
-
-            <div class="cardimg">
-                🧮🤖
-            </div>
-
-            <div class="cardbody">
-
-                <h2>
-                    ماشین حساب هوشمند
-                </h2>
-
-                <p>
-                    ماشین حساب ساخته شده با Python
-                    با قابلیت اتصال به هوش مصنوعی.
-                </p>
-
-                <div class="meta">
-                    <span>Python</span>
-                    <span>AI</span>
-                </div>
-
-                <button
-                class="download"
-                onclick="alert('فایل ماشین حساب را در همین پوشه قرار دهید.')">
-
-                    ⬇️ دانلود
-
-                </button>
-
-            </div>
-
+    <!-- نوار بالای سایت -->
+    <nav class="nav">
+        <div class="logo">
+            💻 AmirMohammad <span>Projects</span>
         </div>
 
+        <div class="navlinks">
+            <button class="active" onclick="showTab('projects', this)">
+                📁 پروژه‌ها
+            </button>
 
-        <!-- آب و هوا -->
+            <button onclick="showTab('about', this)">
+                👤 درباره من
+            </button>
 
-        <div
-        class="card"
-        data-category="python">
-
-            <div class="cardimg">
-                🌤️
-            </div>
-
-            <div class="cardbody">
-
-                <h2>
-                    Smart Weather
-                </h2>
-
-                <p>
-                    برنامه آب و هوا ساخته شده با Python.
-                </p>
-
-                <div class="meta">
-                    <span>Python</span>
-                    <span>Weather</span>
-                </div>
-
-                <a
-                href="SmartWeather.zip"
-                download
-                class="download-link">
-
-                    📦 دانلود برنامه
-
-                </a>
-
-            </div>
-
+            <button onclick="showTab('vscode', this)">
+                💻 آموزش VS Code
+            </button>
         </div>
+    </nav>
 
-
-        <!-- بازی -->
-
-        <div
-        class="card"
-        data-category="game">
-
-            <div class="cardimg">
-                🎮
-            </div>
-
-            <div class="cardbody">
-
-                <h2>
-                    بازی‌های Python
-                </h2>
-
-                <p>
-                    بازی‌های ساخته شده با Python
-                    که به مرور در سایت قرار می‌گیرند.
-                </p>
-
-                <div class="meta">
-                    <span>Python</span>
-                    <span>Game</span>
-                </div>
-
-                <button
-                class="download"
-                onclick="alert('این پروژه به‌زودی منتشر می‌شود.')">
-
-                    🚀 به‌زودی
-
-                </button>
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- ================= ABOUT ================= -->
-
-<section
-id="about"
-class="hidden">
-
-    <div class="info-box">
-
+    <!-- معرفی سایت -->
+    <section class="hero">
         <h1>
-            👤 درباره من
+            AmirMohammad
+            <span>Projects</span>
         </h1>
 
         <p>
-            سلام دوستان بنده
-            <strong>امیرمحمد سلیمانی</strong>
-            هستم.
+            به سایت پروژه‌های امیرمحمد خوش آمدید.
+            در این سایت پروژه‌های Python و برنامه‌های
+            مختلف قرار می‌گیرند.
         </p>
+    </section>
 
-        <p>
-            بنده <strong>15 ساله</strong> هستم ساکن تهران،
-            قبل از هر چیز هدف بنده از تشکیل این سایت
-            کمک به دانش آموزان پایتونی و قصد کمک به آنها را دارم.
-        </p>
+    <!-- پروژه‌ها -->
+    <section id="projects" class="section">
 
-        <p>
-            علاقه ی بنده در <strong>پایتون</strong> هست
-            و بنده در حال تمام کردن پایتون هستم و
-            میخواهم به شما کمک کنم بهتر درمورد پایتون بدانید.
-        </p>
+        <div class="filters">
+            <button class="active" onclick="filterProjects('all', this)">
+                همه پروژه‌ها
+            </button>
 
-    </div>
+            <button onclick="filterProjects('python', this)">
+                🐍 Python
+            </button>
 
-</section>
+            <button onclick="filterProjects('ai', this)">
+                🤖 هوش مصنوعی
+            </button>
 
+            <button onclick="filterProjects('game', this)">
+                🎮 بازی
+            </button>
+        </div>
 
-<!-- ================= VS CODE ================= -->
+        <div class="grid">
 
-<section
-id="vscode"
-class="hidden">
+            <!-- ماشین حساب هوشمند -->
+            <div class="card" data-category="python ai">
+                <div class="cardimg">🧮🤖</div>
 
-    <div class="info-box">
+                <div class="cardbody">
+                    <h2>ماشین حساب هوشمند</h2>
 
-        <h1>
-            💻 آموزش دانلود و نصب VS Code
-        </h1>
+                    <p>
+                        ماشین حساب ساخته شده با Python
+                        با قابلیت اتصال به هوش مصنوعی.
+                    </p>
 
-        <p>
-            <strong>Visual Studio Code</strong>
-            یک ویرایشگر کد حرفه‌ای است که برای
-            برنامه‌نویسی، مخصوصاً Python، استفاده می‌شود.
-        </p>
+                    <div class="meta">
+                        <span>Python</span>
+                        <span>AI</span>
+                    </div>
 
+                    <button class="download"
+                        onclick="alert('فایل ماشین حساب هنوز به لینک دانلود متصل نشده است.')">
+                        ⬇️ دانلود
+                    </button>
+                </div>
+            </div>
 
-        <h2>
-            📥 مرحله ۱ — دانلود VS Code
-        </h2>
+            <!-- برنامه آب و هوا -->
+            <div class="card" data-category="python">
+                <div class="cardimg">🌤️</div>
 
-        <p>
-            برای دانلود نسخه رسمی VS Code
-            از سایت رسمی استفاده کنید.
-        </p>
+                <div class="cardbody">
+                    <h2>Smart Weather</h2>
 
-        <a
-        href="https://code.visualstudio.com/download"
-        target="_blank"
-        rel="noopener"
-        class="download-link">
+                    <p>
+                        برنامه آب و هوا ساخته شده با Python.
+                    </p>
 
-            📥 دانلود رسمی VS Code
+                    <div class="meta">
+                        <span>Python</span>
+                        <span>Weather</span>
+                    </div>
 
-        </a>
+                    <a href="SmartWeather.zip"
+                       download
+                       class="download-link">
+                        📦 دانلود برنامه
+                    </a>
+                </div>
+            </div>
 
+            <!-- بازی شهروند -->
+            <div class="card" data-category="game">
+                <div class="cardimg">🏙️🎮</div>
 
-        <h2>
-            🖥️ مرحله ۲ — اجرای فایل نصب
-        </h2>
+                <div class="cardbody">
+                    <h2>بازی شهروند</h2>
 
-        <p>
-            بعد از دانلود، فایل نصب VS Code را باز کنید.
-            برای بیشتر کاربران ویندوز، گزینه
-            <strong>User Installer</strong>
-            مناسب است.
-        </p>
+                    <p>
+                        شبیه‌ساز مدیریت شهر؛ با انجام مأموریت‌ها
+                        و تصمیم‌گیری، اهمیت قوانین و مقررات را یاد بگیرید.
+                    </p>
 
+                    <div class="meta">
+                        <span>Windows</span>
+                        <span>EXE</span>
+                    </div>
 
-        <h2>
-            ⚙️ مرحله ۳ — نصب برنامه
-        </h2>
+                    <a href="./Shahrvand.exe"
+                       download
+                       class="download-link"
+                       style="display:block;text-align:center;width:100%;">
+                        ⬇️ دانلود بازی شهروند
+                    </a>
 
-        <p>
-            مراحل نصب را ادامه دهید و در پایان روی
-            <strong>Install</strong>
-            کلیک کنید.
-        </p>
+                    <p style="font-size:12px;color:#cbd5e1;margin-bottom:0;">
+                        مخصوص ویندوز؛ پس از دانلود فایل را اجرا کنید.
+                    </p>
+                </div>
+            </div>
 
+        </div>
+    </section>
 
-        <h2>
-            🚀 مرحله ۴ — اجرای VS Code
-        </h2>
+    <!-- درباره من -->
+    <section id="about" class="hidden">
+        <div class="info-box">
+            <h1>👤 درباره من</h1>
 
-        <p>
-            بعد از نصب، VS Code را باز کنید.
-            حالا می‌توانید یک پوشه برای پروژه خود
-            باز کنید و شروع به برنامه‌نویسی کنید.
-        </p>
+            <p>
+                سلام دوستان بنده
+                <strong>امیرمحمد سلیمانی</strong>
+                هستم.
+            </p>
 
+            <p>
+                بنده <strong>۱۵ ساله</strong> هستم و ساکن تهران.
+                هدف من از تشکیل این سایت، کمک به دانش‌آموزان
+                علاقه‌مند به پایتون است.
+            </p>
 
-        <h2>
-            🐍 مرحله ۵ — نصب افزونه Python
-        </h2>
+            <p>
+                به پایتون علاقه دارم و در حال یادگیری و
+                تکمیل مهارت‌های خودم هستم تا بتوانم به شما
+                هم در یادگیری برنامه‌نویسی کمک کنم.
+            </p>
+        </div>
+    </section>
 
-        <p>
-            در VS Code وارد قسمت
-            <strong>Extensions</strong>
-            شوید و افزونه
-            <strong>Python</strong>
-            را نصب کنید.
-        </p>
+    <!-- آموزش VS Code -->
+    <section id="vscode" class="hidden">
+        <div class="info-box">
+            <h1>💻 آموزش دانلود و نصب VS Code</h1>
 
+            <p>
+                <strong>Visual Studio Code</strong>
+                یک ویرایشگر کد حرفه‌ای است که برای برنامه‌نویسی،
+                مخصوصاً Python، استفاده می‌شود.
+            </p>
 
-        <p>
-            سپس می‌توانید یک فایل با پسوند
-            <strong>.py</strong>
-            بسازید و برنامه‌نویسی Python را شروع کنید.
-        </p>
+            <h2>📥 مرحله ۱ — دانلود VS Code</h2>
 
-    </div>
+            <p>
+                برای دانلود نسخه رسمی VS Code از سایت رسمی استفاده کنید.
+            </p>
 
-</section>
+            <a href="https://code.visualstudio.com/download"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="download-link">
+                📥 دانلود رسمی VS Code
+            </a>
 
+            <h2>🖥️ مرحله ۲ — اجرای فایل نصب</h2>
 
-<!-- ================= FOOTER ================= -->
+            <p>
+                بعد از دانلود، فایل نصب VS Code را باز کنید.
+                برای بیشتر کاربران ویندوز، گزینه
+                <strong>User Installer</strong>
+                مناسب است.
+            </p>
 
-<footer>
+            <h2>⚙️ مرحله ۳ — نصب برنامه</h2>
 
-    ❤️ ساخته شده توسط امیرمحمد سلیمانی
+            <p>
+                مراحل نصب را ادامه دهید و در پایان روی
+                <strong>Install</strong> کلیک کنید.
+            </p>
 
-</footer>
+            <h2>🚀 مرحله ۴ — اجرای VS Code</h2>
 
+            <p>
+                بعد از نصب، VS Code را باز کنید.
+                حالا می‌توانید یک پوشه برای پروژه خود باز کنید
+                و شروع به برنامه‌نویسی کنید.
+            </p>
+
+            <h2>🐍 مرحله ۵ — نصب افزونه Python</h2>
+
+            <p>
+                در VS Code وارد قسمت
+                <strong>Extensions</strong>
+                شوید و افزونه <strong>Python</strong> را نصب کنید.
+            </p>
+
+            <p>
+                سپس می‌توانید یک فایل با پسوند
+                <strong>.py</strong>
+                بسازید و برنامه‌نویسی Python را شروع کنید.
+            </p>
+        </div>
+    </section>
+
+    <!-- پایین سایت -->
+    <footer>
+        ❤️ ساخته شده توسط امیرمحمد سلیمانی
+    </footer>
 
 </div>
 
-
-<!-- ================= JAVASCRIPT ================= -->
-
 <script>
+    function showTab(tab, btn) {
+        document.getElementById("projects").classList.add("hidden");
+        document.getElementById("about").classList.add("hidden");
+        document.getElementById("vscode").classList.add("hidden");
 
-function showTab(tab,btn){
+        document.getElementById(tab).classList.remove("hidden");
 
-    document
-    .getElementById("projects")
-    .classList.add("hidden");
+        document.querySelectorAll(".navlinks button").forEach(function(button) {
+            button.classList.remove("active");
+        });
 
-    document
-    .getElementById("about")
-    .classList.add("hidden");
+        btn.classList.add("active");
+    }
 
-    document
-    .getElementById("vscode")
-    .classList.add("hidden");
+    function filterProjects(category, button) {
+        document.querySelectorAll(".filters button").forEach(function(btn) {
+            btn.classList.remove("active");
+        });
 
+        button.classList.add("active");
 
-    document
-    .getElementById(tab)
-    .classList.remove("hidden");
-
-
-    document
-    .querySelectorAll(".navlinks button")
-    .forEach(function(button){
-
-        button.classList.remove("active");
-
-    });
-
-
-    btn.classList.add("active");
-
-}
-
-
-function filterProjects(category,button){
-
-    document
-    .querySelectorAll(".filters button")
-    .forEach(function(btn){
-
-        btn.classList.remove("active");
-
-    });
-
-    button.classList.add("active");
-
-
-    document
-    .querySelectorAll(".card")
-    .forEach(function(card){
-
-        if(category === "all"){
-
-            card.style.display = "block";
-
-        }
-
-        else{
-
-            const categories =
-            card.dataset.category.split(" ");
-
-            if(categories.includes(category)){
-
+        document.querySelectorAll(".card").forEach(function(card) {
+            if (category === "all") {
                 card.style.display = "block";
+            } else {
+                const categories = card.dataset.category.split(" ");
 
+                if (categories.includes(category)) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
             }
-
-            else{
-
-                card.style.display = "none";
-
-            }
-
-        }
-
-    });
-
-}
-
+        });
+    }
 </script>
 
-
 </body>
-
 </html>
